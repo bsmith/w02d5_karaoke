@@ -42,8 +42,8 @@ Take screenshots from this homework for PDA.
         3. ✓ add Guest to Room (only if fee paid) / clear Guests
         6. ✓ Guest can afford fee
         5. ✓ Guest pays fee
-    * TDD: implement methods for tests
-    * Simple `runner.py` demo
+    * ✓ TDD: implement methods for tests
+    * ✓ Simple `runner.py` demo
 2. Extended with finding rooms and fees
     * add KaraokeBar
         1. test/add attributes
