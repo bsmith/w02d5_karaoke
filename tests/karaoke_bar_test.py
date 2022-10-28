@@ -37,26 +37,22 @@ class TestKaraokeBar(unittest.TestCase):
         empty_room = self.karaoke_bar.find_empty_room(3);
         self.assertNotEqual(self.room1, empty_room)
 
-    @unittest.skip("Not implemented")
     def test_increase_takings(self):
         self.karaoke_bar.increase_takings(50);
         self.assertEqual(self.karaoke_bar.takings, 50)
 
-    @unittest.skip("Not implemented")
     def test_check_in_guests__room_with_space(self):
         self.karaoke_bar.check_in_guests(self.room3, self.guests[0:3])
         self.assertEqual(3, len(self.room3.guests))
         self.assertTrue(all([guest.paid_fee for guest in self.guests[0:3]]))
         self.assertEqual(25 * 3, self.karaoke_bar.takings)
 
-    @unittest.skip("Not implemented")
     def test_check_in_guests__room_with_no_space(self):
         self.karaoke_bar.check_in_guests(self.room3, self.guests)
         self.assertEqual(0, len(self.room3.guests))
         self.assertTrue(all([not guest.paid_fee for guest in self.guests]))
         self.assertEqual(0, self.karaoke_bar.takings)
 
-    @unittest.skip("Not implemented")
     def test_check_in_guests__guest_cannot_pay(self):
         poor_guest = Guest("Guest #7", 1)
         self.karaoke_bar.check_in_guests(self.room1, [poor_guest])
@@ -64,7 +60,14 @@ class TestKaraokeBar(unittest.TestCase):
         self.assertFalse(poor_guest.paid_fee)
         self.assertEqual(0, self.karaoke_bar.takings)
 
-    @unittest.skip("Not implemented")
+    def test_check_in_guests__some_guests_cannot_pay(self):
+        poor_guest = Guest("Guest #7", 1)
+        self.karaoke_bar.check_in_guests(self.room2, [poor_guest] + self.guests)
+        self.assertFalse(self.room2.is_empty())
+        self.assertFalse(poor_guest.paid_fee)
+        self.assertTrue(all(guest.paid_fee for guest in self.guests))
+        self.assertEqual(25 * 6, self.karaoke_bar.takings)
+
     def test_check_out_guests(self):
         self.karaoke_bar.check_in_guests(self.room3, self.guests)
         self.karaoke_bar.check_out_guests(self.room3)
