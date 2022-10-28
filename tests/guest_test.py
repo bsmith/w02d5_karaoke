@@ -33,3 +33,4 @@ class TestGuest(unittest.TestCase):
         self.pay_fee(100)
         self.assertEqual(self.guest.wallet, 50)
         self.assertFalse(self.guest_paid_fee)
+

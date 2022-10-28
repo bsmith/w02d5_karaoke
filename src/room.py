@@ -4,3 +4,9 @@ class Room:
         self.guest_limit = guest_limit
         self.playlist = []
         self.guests = set()
+    
+    def add_song_to_playlist(self, song):
+        self.playlist.append(song)
+
+    def clear_playlist(self):
+        self.playlist.clear()
