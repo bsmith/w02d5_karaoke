@@ -19,18 +19,15 @@ class TestRoom(unittest.TestCase):
     def test_room_has_no_guests(self):
         self.assertEqual(0, len(self.room.guests))
 
-    @unittest.skip("Room playlists not implemented yet")
     def test_add_one_song_to_playlist(self):
         self.room.add_song_to_playlist(self.song1)
-        self.assertEqual(self.song1, self.room.playlist)
+        self.assertEqual([self.song1], self.room.playlist)
 
-    @unittest.skip("Room playlists not implemented yet")
     def test_add_two_songs_to_playlist(self):
         self.room.add_song_to_playlist(self.song1)
         self.room.add_song_to_playlist(self.song2)
         self.assertEqual(self.song2, self.room.playlist[1])
 
-    @unittest.skip("Room playlists not implemented yet")
     def test_clear_playlist(self):
         self.room.add_song_to_playlist(self.song1)
         self.room.add_song_to_playlist(self.song2)
