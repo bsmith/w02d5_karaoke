@@ -13,3 +13,19 @@ class TestGuest(unittest.TestCase):
     
     def test_guest_has_not_paid_fee_yet(self):
         self.assertFalse(self.guest.paid_fee)
+
+    @unittest.skip("Fees and affordability not implemented yet")
+    def test_guest_can_afford_fee__True(self):
+        pass
+
+    @unittest.skip("Fees and affordability not implemented yet")
+    def test_guest_can_afford_fee__False(self):
+        pass
+
+    @unittest.skip("Fees and affordability not implemented yet")
+    def test_guest_pay_fee__affordable(self):
+        pass
+
+    @unittest.skip("Fees and affordability not implemented yet")
+    def test_guest_pay_fee__unaffordable(self):
+        pass
