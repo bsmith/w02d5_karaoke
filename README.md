@@ -45,26 +45,27 @@ Take screenshots from this homework for PDA.
     * ✓ TDD: implement methods for tests
     * ✓ Simple `runner.py` demo
 2. Extended with finding rooms and fees
-    * add KaraokeBar
+    * ✓ add KaraokeBar
         1. ✓ test/add attributes
         1. ✓ test find empty Room in KaraokeBar
         2. ✓ test increase KaraokeBar takings
-    * TDD: implement methods for tests
-    * Tests for complex methods / integration tests
+    * ✓ TDD: implement methods for tests
+    * ✓ Tests for complex methods / integration tests
         2. ✓ check in Guests to Room (paying fees)
         3. ✓ check out Guests from Room
-    * TDD: implement methods for tests
-    * Simple `runner.py`
+    * ✓ TDD: implement methods for tests
+    * ✓ Simple `runner.py`
 2. Further extensions
     * Extension methods
         1. use Exceptions
-        1. check fee affordability for Guests
-        1. has space in Room
+        1. ✓ check fee affordability for Guests
+        1. ✓ has space in Room
         2. is Song a favourite of the Guest
         6. flag Guests as having (not) enjoyed visit
         6. find favourite Songs of Guests in Room
         7. react to Guests when checking out
-        8. `count_guest` method and some more playlist methods
+        8. `count_guest` method
+        8. some more playlist methods
         9. as above, don't access properties directly so much
 
 ### Thoughts/Notes
