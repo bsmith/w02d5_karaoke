@@ -20,3 +20,6 @@ class Room:
 
     def clear_guests(self):
         self.guests.clear()
+
+    def has_space(self, num_guests):
+        return (self.guest_limit - len(self.guests)) >= num_guests

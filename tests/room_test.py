@@ -58,27 +58,25 @@ class TestRoom(unittest.TestCase):
         self.room.clear_guests()
         self.assertTrue(self.room.is_empty())
 
-    @unittest.skip("has_space not implemented")
     def test_room_has_space__when_empty__true(self):
         self.assertTrue(self.room.has_space(2))
 
-    @unittest.skip("has_space not implemented")
     def test_room_has_space__when_empty__false(self):
         self.assertFalse(self.room.has_space(5))
 
-    @unittest.skip("has_space not implemented")
     def test_room_has_space__when_full__false(self):
         guests = [Guest(name=f"Guest {n+1}", wallet=50.0) for n in range(3)]
         for guest in guests:
+            guest.pay_fee(25)
             self.room.add_guest(guest)
         self.assertFalse(self.room.has_space(2))
 
-    @unittest.skip("has_space not implemented")
     def test_room_has_space__part_full__true(self):
+        self.guest.pay_fee(25)
         self.room.add_guest(self.guest)
         self.assertTrue(self.room.has_space(2))
 
-    @unittest.skip("has_space not implemented")
     def test_room_has_space__part_full__false(self):
+        self.guest.pay_fee(25)
         self.room.add_guest(self.guest)
         self.assertFalse(self.room.has_space(3))
