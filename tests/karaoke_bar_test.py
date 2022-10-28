@@ -10,32 +10,32 @@ class TestKaraokeBar(unittest.TestCase):
         self.guests = [Guest(f"Test Guest #{n+1}", 50) for n in range(6)]
         self.karaoke_bar = KaraokeBar(self.rooms, 25)
 
-    @unittest.skip("Not implemented")
     def test_bar_has_rooms(self):
         self.assertEqual(3, len(self.karaoke_bar.rooms))
 
-    @unittest.skip("Not implemented")
     def test_bar_has_entrance_fee(self):
         self.assertEqual(25, self.karaoke_bar.entrance_fee)
 
-    @unittest.skip("Not implemented")
     def test_bar_has_zero_takings(self):
         self.assertEqual(0, self.karaoke_bar.takings)
 
-    @unittest.skip("Not implemented")
     def test_find_empty_room__one_guest(self):
         empty_room = self.karaoke_bar.find_empty_room(1)
         self.assertEqual(self.room1, empty_room)
 
-    @unittest.skip("Not implemented")
     def test_find_empty_room__four_guests(self):
         empty_room = self.karaoke_bar.find_empty_room(4)
-        self.assertIn([self.room2, self.room3], empty_room)
+        self.assertIn(empty_room, [self.room2, self.room3])
 
-    @unittest.skip("Not implemented")
     def test_find_empty_room__twelve_guests(self):
         empty_room = self.karaoke_bar.find_empty_room(12)
         self.assertIsNone(empty_room)
+
+    def test_find_empty_room__already_part_occupied(self):
+        self.guests[0].pay_fee(25)
+        self.room1.add_guest(self.guests[0])
+        empty_room = self.karaoke_bar.find_empty_room(3);
+        self.assertNotEqual(self.room1, empty_room)
 
     @unittest.skip("Not implemented")
     def test_increase_takings(self):
