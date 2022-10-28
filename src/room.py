@@ -10,3 +10,13 @@ class Room:
 
     def clear_playlist(self):
         self.playlist.clear()
+
+    def is_empty(self):
+        return len(self.guests) == 0
+
+    def add_guest(self, guest):
+        if guest.paid_fee:
+            self.guests.add(guest)
+
+    def clear_guests(self):
+        self.guests.clear()

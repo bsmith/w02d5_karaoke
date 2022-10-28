@@ -6,6 +6,7 @@ class TestRoom(unittest.TestCase):
         self.room = Room(name="Blue", guest_limit=3)
         self.song1 = Song("With a Little Help from My Friends", "The Beatles")
         self.song2 = Song("Lucy in the Sky with Diamonds", "The Beatles")
+        self.guest = Guest(name="Grace", wallet=50.0)
 
     def test_room_has_name(self):
         self.assertEqual("Blue", self.room.name)
@@ -35,23 +36,24 @@ class TestRoom(unittest.TestCase):
         self.room.clear_playlist()
         self.assertEqual(0, len(self.room.playlist))
 
-    @unittest.skip("Room guests not implemented yet")
     def test_room_is_empty(self):
         self.assertTrue(self.room.is_empty())
 
-    @unittest.skip("Room guests not implemented yet")
     def test_add_guest__guest_has_paid(self):
-        self.room.add_guest(self.guest_paid)
+        self.guest.pay_fee(25)
+        self.assertTrue(self.guest.paid_fee)
+        self.room.add_guest(self.guest)
         self.assertFalse(self.room.is_empty())
 
-    @unittest.skip("Room guests not implemented yet")
     def test_add_guest__guest_not_paid(self):
-        self.room.add_guest(self.guest_not_paid)
+        self.assertFalse(self.guest.paid_fee)
+        self.room.add_guest(self.guest)
         self.assertTrue(self.room.is_empty())
 
-    @unittest.skip("Room guests not implemented yet")
     def test_clear_guests(self):
-        self.room.add_guest(self.guest_paid)
+        self.guest.pay_fee(25)
+        self.assertTrue(self.guest.paid_fee)
+        self.room.add_guest(self.guest)
         self.assertFalse(self.room.is_empty())
         self.room.clear_guests()
         self.assertTrue(self.room.is_empty())
