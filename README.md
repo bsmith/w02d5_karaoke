@@ -30,33 +30,40 @@ Take screenshots from this homework for PDA.
 ## Implementation Plan
 
 1. MVP:
-    * Draw class diagram for MVP+1+3.
-    * Setup skeleton code for runner, tests, classes
+    * ✓ Draw class diagram for MVP+1+3.
+    * ✓ Setup skeleton code for runner, tests, classes
+    * Refactor class diagram for MVP only
     * Sketch activities
-    * Tests for object attributes
-        * follow diagram
-    * Tests for simple methods
-        1. add Songs to Room / clear playlist
-        2. is Room empty
-        2. find empty Room in KaraokeBar
-        3. add Guest to Room / clear Guests
-        6. Guest can afford fee
-        5. Guest pays fee
-        6. increase KaraokeBar takings
+    * ✓ Tests for object attributes
+        * ✓ follow diagram
+    * ✓ Tests for simple methods
+        1. ✓ add Songs to Room / clear playlist
+        2. ✓ is Room empty
+        3. ✓ add Guest to Room (only if fee paid) / clear Guests
+        6. ✓ Guest can afford fee
+        5. ✓ Guest pays fee
+    * TDD: implement methods for tests
+    * Simple `runner.py` demo
+2. Extended with finding rooms and fees
+    * add KaraokeBar
+        1. test/add attributes
+        1. test find empty Room in KaraokeBar
+        2. test increase KaraokeBar takings
+    * TDD: implement methods for tests
     * Tests for complex methods / integration tests
-        1. check fee affordability for Guests
-        2. check in Guests to Room
+        2. check in Guests to Room (paying fees)
         3. check out Guests from Room
+    * TDD: implement methods for tests
+    * Simple `runner.py`
+2. Further extensions
     * Extension methods
+        1. use Exceptions
+        1. check fee affordability for Guests
         1. has space in Room
         2. is Song a favourite of the Guest
         6. flag Guests as having (not) enjoyed visit
         6. find favourite Songs of Guests in Room
         7. react to Guests when checking out
-2. Simple `runner.py`
-2. Extension 1
-3. Extension 3
-4. Extensions 2 and 4.
 
 ### Thoughts/Notes
 
