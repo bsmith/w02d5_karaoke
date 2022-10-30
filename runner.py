@@ -8,6 +8,10 @@ def setup_karaoke_bar():
         Song("Lucy in the Sky with Diamonds", "The Beatles"))
     return KaraokeBar(rooms=[room], entrance_fee=25)
 
+def display_room_playlist(room):
+    for idx, song in enumerate(room.playlist):
+        print(f"  {idx+1}.  '{song.title}' by {song.artist}")
+
 karaoke_bar = setup_karaoke_bar()
 
 guests = [
@@ -19,8 +23,7 @@ room = karaoke_bar.find_empty_room(len(guests))
 karaoke_bar.check_in_guests(room, guests)
 
 print(f"Playlist in the {room.name} room:")
-for idx, song in enumerate(room.playlist):
-    print(f"  {idx+1}.  '{song.title}' by {song.artist}")
+display_room_playlist(room)
 
 print(f"\nSinging tonight are:")
 for guest in sorted(room.guests, key=lambda g:g.name):
