@@ -6,8 +6,8 @@ playlist = [
 ]
 
 guests = {
-    "hopper": Guest(name="Grace Hopper", wallet=50.0),
-    "liskov": Guest(name="Barbara Liskov", wallet=50.0),
+    Guest(name="Grace Hopper", wallet=50.0): playlist[0],
+    Guest(name="Barbara Liskov", wallet=50.0): playlist[1],
 }
 
 def display_playlist(playlist):
@@ -15,8 +15,9 @@ def display_playlist(playlist):
         print(f"  {idx+1}.  '{song.title}' by {song.artist}")
 
 def display_guests(guests):
-    for guest in sorted(guests.keys()):
-        print(f"  {guests[guest].name}")
+    for guest in guests.keys():
+        print(f"  guest: {guest.name}")
+        print(f"  favourite song: {guests[guest].title}")
 
 print(f"Playlist:")
 display_playlist(playlist)
